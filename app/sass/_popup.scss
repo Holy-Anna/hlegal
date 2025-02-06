@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 100, 0.7);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    &.active {
+        display: flex;
+    }
+    &__form {
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .close-btn {
+            width: 32px;
+            height: 32px;
+            background-color: transparent;
+            border: none;
+            border-radius: 8px;
+            padding: 0;
+            margin-left: 15px; 
+            &:hover {
+                background-color: #E6E6F0;
+            }
+        }
+    }
+}
+
+@media (min-width:515px) {
+    .popup__form {
+      border-radius: 12px;
+    }  
+  }
+
+@media (min-width:768px) {
+  .popup__form {
+    width: 650px;
+    height: auto;
+  }  
+}

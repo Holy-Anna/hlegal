@@ -1,0 +1,88 @@
+@use 'variables' as *;
+
+.team{
+    padding-bottom: 30px;
+    .link {
+        margin-bottom: 5px;
+    }
+    &__slider-item {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #F5F5FA;
+        margin-bottom: 30px;
+    }
+    img {
+        height: 500px; 
+        width: 100%; 
+        object-fit: cover;
+    }
+    h3 {
+        padding-bottom: 30px;
+    }
+    &__content {
+        padding: 30px;
+        hyphens: auto;
+        overflow-wrap: break-word;
+    }
+}
+
+.name{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 5px;
+    &_gray {
+        color: $gray;
+    }
+    &_dark-blue {
+        color: $dark-blue;
+    }
+}
+
+.position {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: $gray;
+}
+
+.slick-dots {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: -15px;
+    button {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: $blue;
+        opacity: 0.2;
+        border: none;
+        font-size: 0;
+        margin-left: 15px;
+        transition: opacity .3s;
+        &:hover {
+            opacity: 0.6; 
+        }
+    }
+    .slick-active {
+        button {
+            opacity: 1;  
+        }
+    }
+}
+
+
+@media (min-width: 992px) {
+    .team {
+        img {
+            height: auto; 
+            width: 400px;
+        }
+        &__slider-item {
+            display: flex;
+        }
+    }
+}
+
+

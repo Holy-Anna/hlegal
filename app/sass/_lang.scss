@@ -1,0 +1,46 @@
+ @use 'variables' as *;
+
+.lang {
+    padding-left: 0;
+    display: flex;
+    a {
+        padding: 5px 7px;
+        border-radius: 8px;
+        background-color: transparent;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: background-color 0.3s;
+        &.active {
+            background-color: $hover-red; 
+        }
+        &:active {
+            background-color: $hover-red; 
+        }
+    }
+    &_black-bg a {
+        color: #FFF;
+    }
+    &_white-bg a {
+        color: #B3B3BA;
+        &.active {
+            color: #FFF; 
+        }
+        &:active {
+            color: #FFF;  
+        }
+    }
+}
+
+@media (min-width:992px) {
+    .lang_black-bg a:hover {
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+
+    .lang_white-bg a:hover {
+        background-color: #F5F5FA;
+        color: #B3B3BA;
+    }
+}

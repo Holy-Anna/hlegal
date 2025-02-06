@@ -1,0 +1,53 @@
+.gradient{
+    border-radius: 0px 0px 12px 12px;
+    background: linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+    position: relative;
+    margin-bottom: 50px;
+    &:before{
+        content: '';
+        border-radius: 0px 0px 12px 12px;
+        background-color: #CACADB;
+        height: 10px;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: -10px;
+    }
+    &:after{
+        content: '';
+        border-radius: 0px 0px 12px 12px;
+        background-color: #E7E7F2;
+        height: 10px;
+        position: absolute;
+        left: 40px;
+        right: 40px;
+        bottom: -20px;
+    }
+    &_h {
+      background: url(../img/symbol-h.svg) no-repeat center top, 
+                linear-gradient(229deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+    }
+}
+
+@media (min-width: 768px) {
+    .gradient{
+        margin-bottom: 80px;
+    }
+    .gradient_h {
+        background-size: 893px 1024px, auto auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gradient_h {
+      background-size: 670px 768px, auto auto;
+    }
+}
+
+@media (min-width: 1400px) {
+    .gradient_h {
+      background-size: 697px 799px, auto auto;
+    }
+}
+
+

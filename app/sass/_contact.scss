@@ -1,0 +1,102 @@
+@use 'variables' as *;
+
+.contact {
+    padding: 30px 0;
+    &__address {
+        color: $dark-blue;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 30px;
+        position: relative;
+        margin-bottom: 60px;
+        &::after {
+            content: '';
+            height: 4px;
+            width: 100%;
+            background-color: #E6E6F0;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+        }
+    }
+    &__phone {
+        display: block;
+        color: $dark-blue;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+    &__email {
+        display: block;
+        color: $blue;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 30px;
+        position: relative;
+        margin-bottom: 60px;
+        transition: color .3s;
+        &:hover {
+            color: $hover-red; 
+        }
+        &::after {
+            content: '';
+            height: 4px;
+            width: 100%;
+            background-color: #E6E6F0;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+        }
+    }
+    .fb {
+        display: flex;
+        align-items: center;
+        color: $blue;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px; 
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color .3s;
+        &:hover {
+            color: $hover-red; 
+        }
+        svg {
+            margin-right: 10px;
+        }
+    }
+    &__form {
+        border-radius: 12px;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width:768px) {
+    .contact {
+        padding: 0 0 60px;
+        &__form {
+            margin: auto;
+            margin-top: 60px;
+            max-width: 680px;
+        }
+    }  
+}
+
+@media (min-width:992px) {
+    .contact {
+        display: flex;
+        &__form {
+            width: 50%;
+            margin: 0;
+            max-width: none;
+        }
+        &__box {
+            width: 50%;
+            margin-right: 60px;
+        }
+    }  
+}
+
+
+

@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    color: $blue;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color .3s;
+    svg {
+        margin-left: 2px;
+    }
+    &:hover {
+        color: $hover-red; 
+    }
+    path{
+        transition: stroke .3s;
+    }
+    &:hover path{
+        stroke: $hover-red; 
+    }
+}

@@ -1,0 +1,104 @@
+@use 'variables' as *;
+
+.team-page {
+    padding: 30px 0;
+    h1 {
+        padding-bottom: 30px;
+    }
+    &__list {
+        display: grid;
+        justify-items: center;
+        row-gap: 30px;
+    }
+    &__item {
+        img {
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+    }
+    &__name{
+        display: block;
+        position: relative;
+        &:hover {
+            path {
+                stroke: $hover-red;
+            }
+            span {
+                background-color: #EDEDF7;
+            }
+        }
+        path {
+            transition: stroke .3s;
+        }
+        span {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #F5F5FA;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: background-color .3s;
+        }
+    }
+}
+
+
+@media (min-width:430px) {
+    .team-page {
+        h1 {
+            max-width: 400px;
+            margin: auto;
+        }
+        &__item img {
+            max-width: 400px;
+        }
+    }
+}
+
+@media (min-width:630px) {
+    .team-page {
+        padding: 0 15px 30px;
+        &__list {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px; 
+        }
+        &__item {
+            img {
+                height: 400px;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .team-page {
+        padding: 0 30px 60px;
+        h1 {
+            padding-bottom: 60px;
+            max-width: 664px;
+        }
+    }
+}
+
+
+@media (min-width:1024px) {
+    .team-page {
+        padding: 0 0 60px;
+        h1 {
+            margin: auto;
+        }
+        &__list {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 60px;
+        }
+    }
+}
+
+@media (min-width:1400px) {
+    .team-page h1 {
+        max-width: 1080px;
+    }
+}

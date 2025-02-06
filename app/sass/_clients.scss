@@ -1,0 +1,93 @@
+.clients {
+    padding-top: 30px;
+    h2{
+        color:#323264;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    &__list {
+        margin: 0 -15px;
+    }
+    &__item{
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:nth-last-child(-n+6) {
+            display: none;
+        }
+        &_hi {
+            background: #1C4280;
+        }
+        &_wan {
+            background: #143646;
+        }
+        &_tap {
+            background: #F48B30;
+        }
+        &_3d {
+            background: #9E4DC3;
+        }
+        &_oran {
+            background: #FD9339;
+        }
+        &_adtell {
+            background: #E2E2E4;
+        }
+        &_click {
+            background: #C71C36;
+        }
+        &_eco {
+            background: #DCF3F9;
+        }
+        &_infra {
+            background: #EAEAEA;
+        }
+        &_city {
+            background: #282240;
+        }
+        &_art {
+            background:  #1D4568;
+        }
+        &_ult {
+            background: #000;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .clients{
+        padding-top: 0;
+      &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -30px;
+      }  
+      &__item{
+        width: 33.333%;
+        &:nth-last-child(-n+6) {
+            display: flex;
+        }
+      }
+    }
+}
+
+@media (min-width: 992px) {
+    .clients{
+      &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -30px;
+      }  
+      &__item{
+        width: 25%;
+      }
+    }
+}

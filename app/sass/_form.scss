@@ -1,0 +1,43 @@
+.form {
+    padding: 30px;
+    background-color: #F5F5FA;
+    &__title{
+        padding-bottom: 30px;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+        display: block;
+    }
+    input,
+    textarea {
+        width: 100%;
+        font-family: inherit;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #FFF;
+        background: #FFF;
+        margin-bottom: 15px;
+        line-height: 26px; 
+        color: #000;
+        &::placeholder {
+            color: #B3B3BA;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        &:focus {
+            outline: none;
+            border: 1px solid #24A3FF;
+        }
+    } 
+    &__question {
+        color: #B3B3BA;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 15px 0;
+    } 
+}

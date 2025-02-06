@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+.phone {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    transition: color .3s;
+    &:hover {
+        color: $hover-red;
+    }
+    &_black-bg {
+        color: #FFF;
+    }
+    &_white-bg {
+        color: #B3B3BA;
+    }
+}
+
+@media (min-width:768px) {
+    .phone {
+        display: flex;
+        align-items: center;
+        &::before{
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #E6E6F0;
+            margin: 0 6px;
+        }
+        &::after{
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            right: 0;
+            background-color: #E6E6F0;
+            margin: 0 6px;
+        }
+    }
+}

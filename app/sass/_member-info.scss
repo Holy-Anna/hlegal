@@ -1,0 +1,100 @@
+@use 'variables' as *;
+
+.member-info {
+    display: grid;
+    row-gap: 30px;
+    padding-top: 30px;
+    &__img-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    img {
+        border-radius: 12px;
+        max-height: 450px;
+        
+    }
+    h1 {
+        padding-bottom: 15px;
+    }
+    &__position {
+        color: $gray;
+        font-size: 14px;
+        line-height: 22px; 
+    }
+    a {
+        color: $blue;
+        font-size: 16px;
+        line-height: normal;
+        margin-top: 10px;
+        display: block;
+        transition: color .3s;
+        &:hover {
+            color: $hover-red;
+        }
+    }
+    &__experience {
+        padding-top: 30px;
+        position: relative;
+        &::before {
+            content: '';
+            height: 4px;
+            width: 100%;
+            background-color: #E6E6F0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    p {
+        padding-bottom: 30px;
+    }
+    h2 {
+        color: $dark-blue;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .member-info {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 0;
+        gap: 30px;
+        &__experience {
+            grid-column: 1/-1;
+            padding-bottom: 30px;
+        }
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        img {
+            max-height: auto;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .member-info {
+        grid-template-columns: 1fr 2fr;
+        gap: 60px;
+        &__experience {
+            grid-column: 2/-1;
+        }
+        &__contacts {
+            display: block;
+        }
+        &__img-box {
+            grid-row: 1/-1;
+        }
+    }
+}
+

@@ -1,0 +1,137 @@
+@use 'variables' as *;
+
+.publications {
+    background-color: #F5F5FA;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .link {
+        margin-bottom: 5px;
+    }
+    h2{
+        padding-bottom: 30px;
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 30px;
+    }
+    &__item {
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content{
+        padding: 30px;
+
+        .news-date{
+            padding-bottom: 15px; 
+        }
+
+        p {
+            color: #000;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            padding-top: 15px; 
+        }
+    }
+
+    .btn {
+        margin: 30px auto;
+    }
+
+    &__link {
+        display: inline-block;
+        color: $blue;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 15px;
+        transition: color .3s;
+        &:hover {
+            color: $hover-red;
+        }
+    }
+}
+
+.news-date{
+    color:#B3B3BA;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    &:after{
+        content: '';
+        height: 4px;
+        width: 100%;
+        background-color: #E6E6F0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.segmented-control {
+    border-radius: 12px;
+    background-color: #E6E6F0;
+    margin-bottom: 30px; 
+    display: flex;
+    button {
+        padding: 8px 30px 10px;
+        border-radius: 10px;
+        border: 2px solid #E6E6F0;
+        background-color: transparent;
+        color: #323264;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+        transition: background-color .3s;
+        &:hover {
+            background-color: #F5F5FA;
+        }  
+        &.active {
+            background-color: #FFF;
+        }
+        &:first-child {
+            border-right: none;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .publications {
+        .link {
+            margin-bottom: 10px;
+        }
+        &__list{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 30px;
+        }
+        &__item.last-odd {
+            grid-column: 1 /-1;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .publications {
+        &__list{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 30px;
+        }
+        &__item:last-child {
+            grid-column: auto;
+        }
+    }
+}
