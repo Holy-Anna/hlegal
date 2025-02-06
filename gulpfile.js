@@ -14,7 +14,7 @@ const gulp = require('gulp'),
     replace = require('gulp-replace'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    webp = require("gulp-webp"),
+    webp = require('gulp-webp'),
     babel = require('gulp-babel'),
     cheerio = require('gulp-cheerio');
 
@@ -91,9 +91,10 @@ gulp.task('js-prod', function () {
         .pipe(gulp.dest('dist/js'));
 });
 
+
 gulp.task('css', function () {
     return gulp.src('app/sass/**/*.+(scss|sass)')
-        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError)) 
+        .pipe(sass().on('error', sass.logError))
         .pipe(mediaQueries())
         .pipe(postcss([
             autoprefixer()
@@ -149,17 +150,21 @@ gulp.task('watch', function () {
     gulp.watch('app/*.html', gulp.parallel('code'));
 });
 
-gulp.task('default', gulp.parallel('sass', 'js', 'js-script', 'svg-sprite', 'browser-sync', 'watch'));
-gulp.task('build', gulp.series('clean', 'css', 'js-prod', 'html', 'optimize-images', 'svg-sprite-prod', 'copy-dist'));
-
-gulp.task('webp', function () {
-    return gulp.src("app/img/**/*.{jpg,png}")
-        .pipe(webp({ quality: 90 }))
-        .pipe(gulp.dest("app/img"))
+gulp.task('webp-prod', function () {
+    return gulp.src("app/img/**/*.{jpg,png}") // Вибір всіх .jpg і .png зображень
+        .pipe(webp({ quality: 90 })) // Перетворення в WebP з якістю 90%
+        .pipe(gulp.dest("dist/img")); // Збереження в папці dist/img
 });
 
-gulp.task('webp-prod', function () {
-    return gulp.src("app/img/**/*.{jpg,png}")
-        .pipe(webp({ quality: 90 }))
-        .pipe(gulp.dest("dist/img"))
+
+
+gulp.task('default', gulp.parallel('sass', 'js', 'js-script', 'svg-sprite', 'browser-sync', 'watch')); // Розробка
+
+gulp.task('build', gulp.series('clean', 'css', 'js-prod', 'html', 'optimize-images', 'svg-sprite-prod', 'copy-dist', 'webp-prod')); // Продакшн
+
+
+gulp.task('webp', function () {
+    return gulp.src("app/img/**/*.{jpg,png}") // Вибір всіх .jpg і .png зображень
+        .pipe(webp({ quality: 90 })) // Перетворення зображень у формат WebP
+        .pipe(gulp.dest("app/img")); // Збереження у папці app/img
 });
